@@ -15,8 +15,6 @@ router.post('/', function(request, response) {
 	var password = request.body.password;
 	if (username && password) {
 		connection.query('SELECT * FROM users WHERE username = ? AND password = ?', [username, password], (error, results) => {
-			console.log('results:');
-			console.log(results);
 			if (results.length > 0) {
                 console.log('login success');
 				response.redirect('/../users');

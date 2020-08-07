@@ -28,10 +28,7 @@ router.post('/', function(request, response) {
         try {
             if (username && !(confirmPassword.localeCompare(password))) {
                 connection.query('SELECT * FROM users WHERE username = ?', [username], function(error, results, next) {
-                    console.log(results);
-
                     if (results.length > 0) {
-                        console.log('results: ' + results);
                         response.send('Username is already taken');
                     } else {
                         registration(username, password);

@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+    sql-server-db:
+        container_name: sql-server-db
+        image: mysql:5.7
+        ports:
+            - "1433:1433"
+        command: --init-file /data/application/init.sql
+        volumes:
+            - ./init.sql:/data/application/init.sql
+        environment: 
+            MYSQL_ROOT_PASSWORD: testpassword

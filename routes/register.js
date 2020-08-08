@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 });
 
 var connection = sql.createConnection({
-    host    : '0.0.0.0',
+    host    : 'host.docker.internal',
     user    : 'root',
     password: 'testpassword',
     database: 'madb'
@@ -34,7 +34,7 @@ router.post('/', function(request, response) {
                         registration(username, password);
                         console.log('Successful register');
                         response.redirect('/../');
-                    }			
+                    }
                     response.end();
                 });
             } else {

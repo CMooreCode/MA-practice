@@ -10,3 +10,9 @@ services:
             - ./init.sql:/data/application/init.sql
         environment: 
             MYSQL_ROOT_PASSWORD: testpassword
+    web:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        ports:
+            - "3000:3000"

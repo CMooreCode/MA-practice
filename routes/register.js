@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 });
 
 var connection = sql.createConnection({
-    host    : '0.0.0.0',
+    host    : 'sql-server-db',
     user    : 'root',
     password: 'testpassword',
     database: 'madb'

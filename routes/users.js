@@ -3,7 +3,7 @@ var router = express.Router();
 var sql = require('mysql');
 
 var connection = sql.createConnection({
-    host    : 'host.docker.internal',
+    host    : 'db-host',
     user    : 'root',
     password: 'testpassword',
     database: 'madb'

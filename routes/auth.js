@@ -3,7 +3,7 @@ var router = express.Router();
 var sql = require('mysql');
 
 var connection = sql.createConnection({
-    host    : '0.0.0.0',
+    host    : 'db-host',
     user    : 'root',
     password: 'testpassword',
     database: 'madb'
@@ -20,7 +20,7 @@ router.post('/', function(request, response) {
 				response.redirect('/../users');
 			} else {
 				response.send('Incorrect Username and/or Password!');
-			}			
+			}
 			response.end();
 		});
 	} else {
